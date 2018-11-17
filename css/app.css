@@ -1,0 +1,72 @@
+#header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(218, 86, 86, 0.93), rgba(160, 213, 255, 0.93)), url(/mg/header.jpeg);
+    background-attachment: fixed;
+}
+
+
+#contact {
+    background: linear-gradient(110deg, rgba(237, 239, 240, 1) 0, rgba(237, 239, 240, 1) 50%, transparent 50%), url(/mg/header.jpeg);
+    background-attachment: fixed;
+}
+
+.b-0 {
+    border-width: 0 !important;
+}
+
+.b-right {
+    border-right: 1.5px solid rgba(128, 128, 128, 0.18);
+}
+
+.t-heading-prime {
+    font-size: 30px;
+}
+
+.t-card {
+    position: relative;
+    border-radius: .3rem;
+    overflow: hidden;
+    padding: 1rem !important;
+}
+
+.t-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.33);
+    height: 100%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.t-card-inner {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .3s;
+    z-index: 1;
+}
+
+.t-card:hover .t-card-inner {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.t-card:hover::after {
+    opacity: 1;
+}
+
+@media screen and (max-width: 750px) {
+    .t-card::after {
+        opacity: 1;
+    }
+    .t-card-inner {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
